@@ -84,3 +84,9 @@ ul{
     padding: 0;
     text-align: center;
 }
+
+ol{
+    font-family: Poppins;
+    padding: 0;
+    text-align: end;
+}

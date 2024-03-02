@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Cart</title>
+        <style>
+            button{
+                background-color: pink;
+                border: none;
+                padding: 5px 15px 5px 15px;
+                border-style: solid;
+                border-width: 1px;
+                border-radius: 5px;
+                border-color: rgb(255, 67, 98);
+                color: rgb(255, 67, 98);
+                cursor: pointer;
+            }
+            button:hover{
+                background-color: rgb(255, 67, 98);
+                color: white;
+                border-color: pink;
+            }
+        </style>
+    </head>
+    <body>
+        <main>
+            <button onclick="
+            if (CartQuantity < 0){
+                CartQuantity = 0;
+            }
+            console.log(`Cart Quantity: ${CartQuantity}`);
+            ">Show Quantity</button>
+            <button onclick="
+                CartQuantity +=1;
+                console.log(`Cart Quantity: ${CartQuantity}`);
+            ">Add to Cart</button>
+            <button onclick="
+                CartQuantity +=2;
+                console.log(`Cart Quantity: ${CartQuantity}`);
+            ">2+</button>
+            <button onclick="
+                CartQuantity +=3;
+                console.log(`Cart Quantity: ${CartQuantity}`);
+            ">3+</button>
+            <button onclick="
+            CartQuantity +=4;
+            console.log(`Cart Quantity: ${CartQuantity}`);
+            ">4+</button>
+            <button
+            onclick="
+                CartQuantity -= 1;
+                if (CartQuantity < 0){
+                CartQuantity = 0;
+                }
+                console.log(`Cart Quantity: ${CartQuantity}`);
+            ">Remove from Cart</button>
+            <button onclick="
+                CartQuantity -=2;
+                if (CartQuantity <0){
+                    CartQuantity = 0;
+                }
+                console.log(`Cart Quantity: ${CartQuantity}`);
+            ">-2</button>
+            <button onclick="
+                CartQuantity -=3;
+                if (CartQuantity < 0)
+                {
+                    CartQuantity = 0 ;
+                }
+                console.log(`Cart Quantity: ${CartQuantity}`);
+            ">-3</button>
+        </main>
+        <script>
+            let CartQuantity = 0;
+        </script>
+    </body>
+</html>
