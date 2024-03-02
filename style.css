@@ -1,0 +1,76 @@
+p{
+    font-family: Poppins;
+}
+a{
+    font-family: Poppins;
+    text-decoration: none;
+    color: black;
+}
+a:visited{
+    color: black;
+}
+a:hover{
+    color:  rgb(183, 0, 255);
+}
+.github:hover{
+    color: red;
+}
+.base{
+    margin-top: 50px;
+    margin-bottom: 50px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    align-content: center;
+}
+.container{
+    background-color: white;
+    display: flex;
+    flex-direction: column;
+    width: 500px;
+    justify-content: center;
+    align-items: center;
+    gap: 0px;
+    padding-left: 30px;
+    padding-right: 30px;
+    padding-top: 20px;
+    padding-bottom: 20px;
+    border-radius: 10px;
+    box-shadow: 0px 0px 10px rgba(0,0,0,0.5);
+    margin-bottom: 20px;
+}
+.container2{
+    background-color: white;
+    display: flex;
+    flex-direction: column;
+    width: auto;
+    justify-content: center;
+    align-items: center;
+    padding-left: 30px;
+    padding-right: 30px;
+    padding-top: 20px;
+    padding-bottom: 20px;
+    border-radius: 50px;
+    box-shadow: 0px 0px 10px rgba(0,0,0,0.5);
+    margin-bottom: 20px;
+    transition: all 0.15s;
+}
+.container2:hover{
+    background-color: black;
+    color: white;
+}
+.container2:hover a{
+    color: white;
+}
+.container2 a:hover{
+    color: white;
+}
+.text{
+    font-size: 25px;
+    font-weight: bold;
+}
+ul{
+
+    padding: 0
+}
