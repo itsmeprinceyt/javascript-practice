@@ -1,2 +1,3 @@
 # README
-This repository stores all the practice files which I have created to practice on while I was studying and learning about Javascript. You can follow up the deployed website which I'll link here: https://itsmeprinceyt.github.io/javascript-practice/
+This repository stores all the practice files I created to practice while studying and learning about Javascript. You can follow up on the deployed website which I'll link below
+- https://itsmeprinceyt.github.io/javascript-practice/
