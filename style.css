@@ -5,21 +5,29 @@ a{
     font-family: Poppins;
     text-decoration: none;
     color: black;
+    transition: all 0.15s ease;
+}
+body{
+    background: #000000;
+    background: -webkit-linear-gradient(to right, #434343, #000000);
+    background: linear-gradient(to right, #434343, #000000);
+}
+.github{
+    transition: all 0.15s ease;
 }
 a:visited{
     color: black;
 }
-a:hover{
-    color:  rgb(183, 0, 255);
-}
-.github:hover{
-    color: red;
+a:hover, .github:hover{
+    opacity: 0.5;
+    font-size: 20px;
 }
 .base{
     margin-top: 50px;
     margin-bottom: 50px;
     display: flex;
     flex-direction: column;
+    gap: 50px;
     align-items: center;
     justify-content: center;
     align-content: center;
@@ -36,9 +44,8 @@ a:hover{
     padding-right: 30px;
     padding-top: 20px;
     padding-bottom: 20px;
-    border-radius: 10px;
+    border-radius: 20px;
     box-shadow: 0px 0px 10px rgba(0,0,0,0.5);
-    margin-bottom: 20px;
 }
 .container2{
     background-color: white;
@@ -60,11 +67,13 @@ a:hover{
     background-color: black;
     color: white;
 }
-.container2:hover a{
+.container2:hover .repo{
     color: white;
 }
-.container2 a:hover{
+.repo:hover{
     color: white;
+    opacity: 1;
+    font-size: 16px;
 }
 .text{
     font-size: 25px;
