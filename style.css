@@ -80,6 +80,7 @@ a:hover, .github:hover{
     font-weight: bold;
 }
 ul{
-
-    padding: 0
+    font-family: Poppins;
+    padding: 0;
+    text-align: center;
 }
