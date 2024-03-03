@@ -1,6 +1,8 @@
 p{
     font-family: Poppins;
+    margin: 0;
 }
+
 a{
     font-family: Poppins;
     text-decoration: none;
@@ -78,6 +80,13 @@ a:hover, .github:hover{
 .text{
     font-size: 25px;
     font-weight: bold;
+    margin-bottom: 20px;
+}
+.title{
+    text-align: center;
+    margin: 0;
+    font-weight: 400;
+    font-size: 15px;
 }
 ul{
     font-family: Poppins;
