@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Coin Flip</title>
+    </head>
+    <body>
+        <p>Inspect this page and see Console.</p>
+        <hr>
+        <script>
+            const value = Math.random();
+            let result='';
+            let guess='Head';
+            /*Using ternary operator*/
+            result = value < 1/2 ? 'Head' : 'Tail';
+            console.log(result === guess ? 'You Win' : 'You Lose');
+            /*Using normal if-else
+            if ( value < 1/2 )
+            {
+                result = 'Head';
+            }
+            else {
+                result = 'Tail';
+            }
+            if(result === guess){
+                console.log('You Win');
+            }
+            else{
+                console.log('You Lose');
+            }*/
+        </script>
+    </body>
+</html>
