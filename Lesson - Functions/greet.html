@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Greet</title>
+    </head>
+    <body>
+        <p>Inspect this page and see the console log.</p>
+        <hr>
+        <script>
+            function greet(parameter){
+                console.log(`Hello ${parameter}, how are you doing?`);
+            }
+            console.log(`When passing parameter:`);
+            greet('Uvaish');
+            console.log(`When not passing parameters:`);
+            greet();
+            console.log(`\nNow we will make a condition that if the parameter is not defined it will show, "Hello there" instead of "Hello defined"\n`);
+            function greet2(parameter){
+                if ( parameter === undefined ){
+                    console.log(`Hello there, how are you doing?`);
+                } else {
+                console.log(`Hello ${parameter}, how are you doing?`);
+                }
+            }
+            greet2();
+            greet2('tom');
+        </script>
+    </body>
+</html>

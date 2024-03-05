@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Convert Temperature</title>
+    </head>
+    <body>
+        <p>Inspect this page and see the console log.</p>
+        <hr>
+        <script>
+            function convertToFahrenheit(celsius){
+                Fahrenheit = (celsius * 9/5) + 32;
+                return Fahrenheit;
+            }
+            function convertToCelsius(Fahrenheit){
+                Celsius = (Fahrenheit - 32) * 5/9;
+                return Celsius;
+            }
+            function convertTemperature(degrees, unit){
+                result ='';
+                result = degrees!== 'C' ? (unit - 32) * 5/9 : (unit * 9/5) + 32 ;
+                return result;
+            }
+            console.log(`Celsius(22) -> Fahrenheit(${convertToFahrenheit(25)})`);
+            console.log(`Fahrenheit(86) -> Celsius(${convertToCelsius(86)})`);
+            console.log(`Now we make a function that deals with both the degrees!\n\n\n`);
+            console.log(`Celsius(22) -> Fahrenheit(${convertTemperature('C',25)})`);
+            console.log(`Fahrenheit(86) -> Celsius(${convertTemperature('F',86)})`);
+        </script>
+    </body>
+</html>

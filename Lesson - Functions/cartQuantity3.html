@@ -1,7 +1,9 @@
+<!-- CONTINUE -->
+
 <!DOCTYPE html>
 <html>
     <head>
-        <title>Cart Update</title>
+        <title>Cart Update 2</title>
         <style>
             button{
                 background-color: pink;
@@ -27,10 +29,10 @@
             <p>Inspect this page and see Console.</p>
             <hr>
             <button onclick="
-                if(CartQuantity < 0 || CartQuantity === 0)
+                if(CartQuantity < 0 )
                 {
                     CartQuantity = 0;
-                    console.log(`Cart Quantity: ${CartQuantity}`);
+                    return;
                 }
                 else{
                     console.log(`Cart Quantity: ${CartQuantity}`);
@@ -40,10 +42,12 @@
                 if (CartQuantity > 9){
                     alert(`Cart is Full`);
                     console.log(`Cart is full, cannot add item`);
+                    return;
                 } else if(CartQuantity < 0)
                 {
                     CartQuantity += 1;
                     console.log(`Cart Quantity: ${CartQuantity}`);
+                    return;
                 }
                 else{
                     CartQuantity += 1;
@@ -54,10 +58,12 @@
                 if (CartQuantity > 9){
                     alert(`Cart is Full`);
                     console.log(`Cart is full, cannot add item`);
+                    return;
                 } else if(CartQuantity < 0)
                 {
                     CartQuantity += 2;
                     console.log(`Cart Quantity: ${CartQuantity}`);
+                    return;
                 }
                 else{
                     CartQuantity += 2;
@@ -96,6 +102,7 @@
             onclick="
                 if (CartQuantity < 0){
                     alert(`Cart is Empty`);
+                    return;
                 } 
                 else{
                     CartQuantity -= 1;
@@ -123,6 +130,17 @@
         </main>
         <script>
             let CartQuantity = 0;
+            function showCart(CartQuantity){
+                console.log()
+                if(CartQuantity < 0 )
+                {
+                    CartQuantity = 0;
+                    return;
+                }
+                else{
+                    console.log(`Cart Quantity: ${CartQuantity}`);
+                }
+            }
         </script>
     </body>
 </html>
