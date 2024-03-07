@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Scrappy Calculator</title>
+        <style>
+            button{
+                background-color: pink;
+                border: none;
+                padding: 5px 15px 5px 15px;
+                border-style: solid;
+                border-width: 1px;
+                border-radius: 5px;
+                border-color: rgb(255, 67, 98);
+                color: rgb(255, 67, 98);
+                cursor: pointer;
+            }
+            button:hover{
+                background-color: rgb(255, 67, 98);
+                color: white;
+                border-color: pink;
+            }
+        </style>
+    </head>
+    <body>
+        <main>
+            <p>Inspect this page and see Console. || We added Local Storage in this updated version. Your result is now stored. If you refresh and click on '=' you can still see the result in console log.</p>
+            <hr>
+            <p>
+                <button onclick="updateCalculation('1');">1</button>
+                <button onclick="updateCalculation('2');">2</button>
+                <button onclick="updateCalculation('3');">3</button>
+            </p>
+            <p>
+                <button onclick="updateCalculation('4');">4</button>
+                <button onclick="updateCalculation('5');">5</button>
+                <button onclick="updateCalculation('6');">6</button>
+                </p>
+                <p>
+                    <button onclick="updateCalculation('7');">7</button>
+                    <button onclick="updateCalculation('8');">8</button>
+                    <button onclick="updateCalculation('9');">9</button>
+            </p>
+            <p>
+                <button onclick="updateCalculation('-');">-</button>
+                <button onclick="updateCalculation('+');">+</button>
+                <button onclick="Calculate();">=</button>
+            </p>
+        </main>
+        <script>
+            let calculation = localStorage.getItem('result') || '';
+            function updateCalculation(input){
+                calculation +=input
+                console.log(calculation);
+            }
+            function Calculate(){
+                calculation = eval(calculation);
+                console.log(`Result: ${calculation}`);
+                localStorage.setItem('result',calculation);
+            }
+        </script>
+    </body>
+</html>

@@ -1,0 +1,16 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title></title>
+    </head>
+    <body>
+        <input placeholder="Enter..." class="js-input" onkeyup="saathSaath(event);">
+        <p class="js-print"></p>
+        <script>
+            function saathSaath(event) {
+                const inputElement = document.querySelector('.js-input');
+                document.querySelector('.js-print').innerHTML = inputElement.value;
+            }
+        </script>
+    </body>
+</html>

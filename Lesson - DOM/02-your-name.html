@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>DOM</title>
+    </head>
+    <body>
+        
+        <input placeholder="Enter your name" type="text" class="js-input" onkeydown="keyDOWN(event);">
+        <button onclick="printName();">Submit</button>
+        <p class="js-name"></p>
+        <script>
+            function keyDOWN(event){
+                if ( event.key === 'Enter'){
+                    printName();
+                }
+            }
+            function printName(){
+                const name = String(document.querySelector('.js-input').value);
+                document.querySelector('.js-name').innerHTML = `Your name is ${name}`;
+            }
+        </script>
+    </body>
+</html>

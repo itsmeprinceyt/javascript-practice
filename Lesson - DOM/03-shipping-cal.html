@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>DOM</title>
+    </head>
+    <body>
+        <input placeholder="Enter" class="js-input" onkeydown="keyDOWN(event);">
+        <button onclick="calculatePrice();">Submit</button>
+        <p class="js-price"></p>
+        <script>
+            function keyDOWN(event){
+                if ( event.key === 'Enter'){
+                    calculatePrice();
+                }
+            }
+            function calculatePrice(){
+                let price = document.querySelector('.js-input');
+                let cost = Number(price.value) * 100;
+                if (cost < 4000 ){
+                    cost +=1000;
+                } else {
+                    cost = cost;
+                }
+                document.querySelector('.js-price').innerHTML = `$${cost / 100}`;
+            }
+        </script>
+    </body>
+</html>
