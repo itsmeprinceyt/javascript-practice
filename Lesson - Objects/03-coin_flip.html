@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Coin Flip</title>
+        <style>
+            button{
+                background-color: rgb(255, 174, 0);
+                padding: 10px 20px 10px 20px;
+                border: none;
+                border-radius: 5px;
+                margin-right: 10px;
+                cursor: pointer;
+            }
+            button:hover{
+                background-color: rgb(189, 129, 0);
+            }
+        </style>
+    </head>
+    <body>
+        <p>Inspect this page and see Console.</p>
+        <hr>
+        <button onclick="playGame('Head');">Head</button>
+        <button onclick="playGame('Tail');">Tails</button>
+        <button onclick="showResult();">Score</button>
+        <button onclick="resetResult();">Reset</button>
+        <script>
+            let score =  JSON.parse(localStorage.getItem('score'))||{
+                wins: 0,
+                losses: 0
+            };
+            function playGame(guess){
+                const value = Math.random();
+                const result = value < 1/2 ? 'Head': 'Tail';
+                if (result === guess){
+                    console.log(`You Win`);
+                    score.wins+=1;
+                } else{
+                    console.log(`You lost`);
+                    score.losses+=1;
+                }
+                localStorage.setItem('score',JSON.stringify(score));
+                console.log(`Wins: ${score.wins} Losses: ${score.losses}`);
+            }
+            function showResult(){
+                console.log(`Wins: ${score.wins} Losses: ${score.losses}`)
+                alert(`Wins: ${score.wins} Losses: ${score.losses}`);
+            }
+            function resetResult(){
+                score.wins = 0;
+                score.losses = 0;
+                localStorage.removeItem('score');
+                alert(`Score has been reset!`);
+            }
+        </script>
+    </body>
+</html>

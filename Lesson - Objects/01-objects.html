@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Objects</title>
+    </head>
+    <body>
+        <p>Inspect this page and see console log.</p>
+        <hr>
+        <script>
+            product = {
+                name: 'Basketball',
+                price: 2095,
+                ['delivery-time']: '3 day' 
+            };
+            product4 = {
+                name: 'Basketball',
+                price: 2095,
+                ['delivery-time']: '3 day' 
+            };
+            product2 = {
+                name: 'Badminton',
+                price: 1856,
+                ['delivery-time']: '5 day'
+            };
+            /*product = {
+                name: 'Basketball',
+                price: 2095
+            };
+            product2 = {
+                name: 'Basketball',
+                price: 2095
+            };*/
+            console.log(product);
+            //product.price +=500;
+            console.log(product);
+            /*now we make a function to compare the prices of those product*/
+            function compareProducts(pro,pro2){
+                if (pro.price === pro2.price) {
+                    console.log(`Prices are same.`);
+                } else if (pro.price > pro2.price) {
+                    console.log(`Product 2 Price is cheaper`);
+                } else{
+                    console.log(`Product 1 Price is cheaper`);
+                }
+            }
+            function isSameProduct(pro,pro2){
+                if ((pro.name === pro2.name) && (pro.price === pro2.price) && (pro['delivery-time']=== pro2['delivery-time'])){
+                    return true;
+                }
+                else
+                {
+                    return false;
+                }
+            }
+            compareProducts(product,product2);
+            console.log(isSameProduct(product,product2));
+            let string='Hello, I am Uvaish';
+            console.log(string);
+            console.log(string.toLowerCase());
+            console.log(string.repeat(3));
+        </script>
+    </body>
+</html>
