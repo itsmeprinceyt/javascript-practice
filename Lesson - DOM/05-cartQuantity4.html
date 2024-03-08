@@ -4,13 +4,12 @@
         <title>Cart Update 2</title>
         <style>
             button{
+                font-family: Arial;
                 background-color: pink;
                 border: none;
                 padding: 5px 15px 5px 15px;
-                border-style: solid;
-                border-width: 1px;
+                border: 1px solid rgb(255, 67, 98);
                 border-radius: 5px;
-                border-color: rgb(255, 67, 98);
                 color: rgb(255, 67, 98);
                 cursor: pointer;
             }
@@ -18,6 +17,15 @@
                 background-color: rgb(255, 67, 98);
                 color: white;
                 border-color: pink;
+            }
+            .js-Cart{
+                font-family: Arial;
+                display: inline-block;
+                background-color: pink;
+                color: rgb(255, 67, 98);
+                padding: 5px 15px 5px 10px;
+                border: 1px solid rgb(255, 67, 98);
+                border-radius: 5px;
             }
         </style>
     </head>
@@ -34,9 +42,14 @@
             <button onclick="remove(1);">Remove from Cart</button>
             <button onclick="remove(2);">-2</button>
             <button onclick="remove(3);">-3</button>
+            <p class="js-Cart" "></p>
         </main>
         <script>
             let CartQuantity = 0;
+            window.onload=(displayCart());
+            function displayCart() {
+                document.querySelector('.js-Cart').innerHTML = `Cart Quantity: ${CartQuantity}`;
+            }
             function showCart(){
                 if(CartQuantity < 0 )
                 {
@@ -44,7 +57,8 @@
                     return;
                 }
                 else{
-                    console.log(`Cart Quantity: ${CartQuantity}`);
+                    displayCart();
+                    alert(`Cart Quantity: ${CartQuantity}`);
                 }
                 }
 
@@ -56,11 +70,13 @@
                     } else if(CartQuantity < 0)
                     {
                     CartQuantity += item;
+                    displayCart();
                     console.log(`Cart Quantity: ${CartQuantity}`);
                     return;
                     }
                     else{
                     CartQuantity += item;
+                    displayCart();
                     console.log(`Cart Quantity: ${CartQuantity}`);
                 }
                 }
@@ -71,6 +87,7 @@
                     } 
                     else{
                     CartQuantity -= item;
+                    displayCart();
                     console.log(`Cart Quantity: ${CartQuantity}`);
                     }
                 }
