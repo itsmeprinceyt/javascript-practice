@@ -1,0 +1,18 @@
+.css-input{
+    padding: 8px 10px 8px 10px;
+    margin-right: 10px;
+}
+.css-calculate{
+    background-color: green;
+    padding: 10px;
+    border: none;
+    color: white;
+    cursor: pointer;
+    transition: 0.15s ease;
+}
+.css-calculate:active{
+    opacity: 0.8;
+}
+.js-error{
+    color: red;
+}

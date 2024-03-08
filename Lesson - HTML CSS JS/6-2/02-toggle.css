@@ -1,0 +1,13 @@
+.on-button{
+    background-color: rgb(206, 206, 206);
+    padding: 8px 20px 8px 20px;
+    margin-right: 10px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+}
+.off-button{
+    background-color: black;
+    color: white;
+    cursor: pointer;
+}
