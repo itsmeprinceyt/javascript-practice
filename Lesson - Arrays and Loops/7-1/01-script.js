@@ -143,7 +143,6 @@ function minMin(arr){
 }
 
 const fruits = ['apple', 'mango', 'grapes', 'banana'];
-console.log(countWords(fruits));
 function countWords(arr){
     const result = {};
     for ( let i = 0 ; i< arr.length ; i++)
@@ -158,4 +157,75 @@ function countWords(arr){
         }
     }
     return result;
+}
+
+// remove specific Food from array full of string
+const foods = ['apple','egg','orange','egg','orange','apple','egg','egg'];
+function removeEgg(foods){
+    const foods2 = [];
+    for( let i = 0 ; i <foods.length ; i++)
+    {
+        if(foods[i]!=='egg')
+        {
+            foods2.push(foods[i]);
+        }
+    }
+    return foods2;
+}
+console.log(`First Version:`);
+console.log(removeEgg(foods));
+// removing specific food from array full of string but only first two occurrence
+const fooda = ['apple','egg','orange','egg','orange','apple','egg','egg'];
+function removeEgg2(foods){
+    const foods2 = [];
+    let count = 0;
+    for( let i = 0 ; i <foods.length ; i++)
+    {
+        if(foods[i] === 'egg' && count <2)
+        {
+            count++;
+            continue;
+        }
+        else{
+            foods2.push(foods[i]);
+        }
+    }
+    return foods2;
+}
+console.log(`Second Version:`);
+console.log(removeEgg2(fooda));
+
+//now we want to remove the last two egg so we will reverse and then remove the last two eggs
+const foods2 = fooda.slice();
+console.log(`Third version:`);
+const foods2R = removeEgg2(foods2.reverse());
+console.log(foods2R.reverse());
+
+// Fizz buzz
+
+console.log(`Fizz Buzz`);
+FizzBuzz();
+function FizzBuzz(){
+    console.log(`Rules: If the number is divisible by 3 then it'll show 'Fizz', if the number is divisible by 5 then it'll show 'Buzz'. If both then it'll show 'Fizz Buzz' !`);
+    let i = 1;
+    while ( i <= 20)
+    {
+        if (i === 21)
+        {
+            break;
+        }
+        if( (i % 3  === 0) && (i % 5 === 0))
+        {
+            console.log(`${i} : Fizz Buzz`);
+        }else if (i % 3 === 0)
+        {
+            console.log(`${i}: Fizz`);
+        }else if (i% 5 === 0)
+        {
+            console.log(`${i}: Buzz`);
+        } else{
+            console.log(`${i}`);
+        }
+        i++;
+    }
 }
