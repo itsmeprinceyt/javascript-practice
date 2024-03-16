@@ -1,5 +1,28 @@
 body{
     background-color: rgb(19, 19, 19);
+    margin: 0;
+}
+.container_noti{
+    position: relative;
+}
+.reset-message{
+    z-index: 100;
+    position: absolute;
+    background-color: rgba(0, 0, 0,0.9);
+    display: flex;
+    flex-direction: column;
+    align-content: center;
+    vertical-align: middle;
+    justify-content:center;
+    gap: 5px;
+    align-items: center;
+    left: 0;
+    right: 0;
+    height: 100vh;
+    color: white;
+    font-size: 20px;
+    font-family: Arial;
+    display: none;
 }
 .container{
     background-color: white;
@@ -53,7 +76,7 @@ body{
 .js-button:active{
     background-color: rgb(255, 226, 183);
 }
-.reset-button, .github, .auto-play{
+.reset-button, .github, .auto-play, .reset-message button{
     font-family: Arial;
     border: none;
     background-color: black;
@@ -64,8 +87,15 @@ body{
     font-size: 12px;
     cursor: pointer;
 }
-.reset-button:hover, .github:hover, .auto-play:hover{
+.reset-button:hover, .github:hover, .auto-play:hover ,.reset-message button:hover{
     opacity: 0.9;
+}
+.reset-message button{
+    background-color: white;
+    color: black;
+    padding: 25px;
+    padding-top: 10px;
+    padding-bottom: 10px;
 }
 .github{
     display: inline-block;
@@ -111,5 +141,10 @@ a:visited{
         top: 485px;
         left: 50%;
         transform: translate(-50%);
+    }
+    .reset-message{
+        gap: 7px;
+        font-size: 18px;
+        
     }
 }

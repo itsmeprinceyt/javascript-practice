@@ -6,22 +6,33 @@ let score = JSON.parse(localStorage.getItem('score')) || {
 function scoreLoad(){
     document.querySelector('.js-score').innerHTML = `Wins: ${score.wins} Losses: ${score.losses} Ties: ${score.ties}`;
 }
+function displayNone(){
+    document.querySelector('.reset-message').style.display= 'none';
+}
 function scoreReset(){
-    score.wins = 0;
-    score.losses = 0;
-    score.ties = 0;
-    scoreLoad();
-    localStorage.remove('score');
+    document.querySelector('.reset-message').style.display ='flex';
+    document.querySelector('.yes').addEventListener('click',() => {
+        displayNone();
+        score.wins = 0;
+        score.losses = 0;
+        score.ties = 0;
+        scoreLoad();
+        localStorage.remove('score');
+    });
+    document.querySelector('.no').addEventListener('click',()=> {
+        displayNone();
+    });
 }
 let toggleB = false;
 let intervalID;
 let AutoPlay = document.querySelector('.noti');
-
+let AutoPlayButton = document.querySelector('.auto-play');
 function autoPlay() {
     if (!toggleB) {
         toggleB = true;
         AutoPlay.style.color = 'red';
         AutoPlay.innerHTML = 'Autoplay is on!';
+        AutoPlayButton.innerHTML = 'Stop Autplay';
         setTimeout(() => {
             AutoPlay.style.opacity = 1;
         }, 1500);
@@ -34,6 +45,7 @@ function autoPlay() {
         toggleB = false;
         AutoPlay.style.color = 'yellow';
         AutoPlay.innerHTML = 'Autoplay is off!';
+        AutoPlayButton.innerHTML = 'Auto Play';
         setTimeout(() => {
             AutoPlay.style.opacity = 0;
         }, 5000);
@@ -96,6 +108,39 @@ function generateComputerMove(){
     }
     return ComputerMove;
 }
-function openURL(url) {
-    window.open(`${url}`, '_blank');
-  }
+function openURL() {
+    window.open('https://github.com/itsmeprinceyt/rock-paper-scissors', '_blank');
+}
+document.querySelector('.github').addEventListener('click',() =>{
+    openURL();
+})
+document.querySelector('.js-paper').addEventListener('click',() => {
+    gamePlay('paper');
+})
+document.querySelector('.js-rock').addEventListener('click',() => {
+    gamePlay('rock');
+})
+document.querySelector('.js-scissors').addEventListener('click',() => {
+    gamePlay('scissors');
+})
+document.querySelector('.reset-button').addEventListener('click',() =>{
+    scoreReset();
+})
+document.body.addEventListener('keydown', (event) => {
+    if(event.key === 'r')
+    {
+        gamePlay('rock');
+    } else if(event.key ==='s')
+    {
+        gamePlay('scissors');
+    } else if(event.key === 'p')
+    {
+        gamePlay('scissors');
+    }else if(event.key === 'a')
+    {
+        autoPlay();
+    }else if(event.key==='Backspace')
+    {
+        scoreReset();
+    }
+})
