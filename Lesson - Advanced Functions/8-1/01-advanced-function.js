@@ -49,14 +49,14 @@ let timeOutId2;
 let timeOutId3;
 ChangingNoti(notification_value);
 function ChangingNoti(){
-    timeOutId2 = setInterval(function(){
+    timeOutId2 = setInterval(() => {
         if (notification_value === 0 )
         {
             clearTimeout(timeOutId2);
         }
         document.title = `(${notification_value}) New message`;
     },1000);
-    timeOutId3 = setInterval(function(){
+    timeOutId3 = setInterval(() => {
         if ( notification_value === 0 )
         {
             clearTimeout(timeOutId3);
