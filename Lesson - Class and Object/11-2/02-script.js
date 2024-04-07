@@ -1,4 +1,8 @@
 class ItsMePrince{
+    constructor(name,subscribernumber){
+        this.name = name
+        this.subscribernumber = subscribernumber
+    }
     Subscriber()
     {
         console.log(`Hello and I'm ${this.name} and I've subscribed to your channel!, I'm your ${this.subscribernumber} subscriber! :)`);
@@ -11,16 +15,10 @@ class ItsMePrince{
     showingYouTubeChannelLink(){
         document.querySelector('.channelLink').innerHTML = `<a href="https://www.youtube.com/channel/UCcT79p6kqC_OvQgYh7YHkkw/" target="_blank">ItsMe Prince 0 YouTube Channel</a>`;
     }
-    enterDetails(name,subscribernumber){
-        this.name = name
-        this.subscribernumber = subscribernumber
-    }
 }
 
-const Sam = new ItsMePrince()
-const James = new ItsMePrince()
-Sam.enterDetails("Sam", 10)
-James.enterDetails("James", 29)
+const Sam = new ItsMePrince("Sam", 10)
+const James = new ItsMePrince("James", 29)
 Sam.Subscriber()
 James.Subscriber()
 Sam.info()
