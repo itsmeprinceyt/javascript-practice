@@ -80,3 +80,16 @@ function changeNotiN(){
         notification_value -=1;
     }
 }
+
+setTimeout(()=>{
+    console.log(`Hello this is a function with 30 timeout`)
+},30)
+setTimeout(()=>{
+    console.log(`Hello this is a function with 20 timeout`)
+},20)
+setTimeout(()=>{
+    console.log(`Hello this is a function with 10 timeout`)
+},10)
+setTimeout(()=>{
+    console.log(`Hello this is a function with 0 timeout`)
+},0)
